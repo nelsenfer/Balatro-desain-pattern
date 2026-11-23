@@ -33,14 +33,15 @@ void GameManager::runSession() {
         jokerCard.onHandPlayed(score);
         score = jokerCard.modifyScore(score);
 
-        bool isWin = blindRule.checkBlind(score.total);
+        int blindTarget = blindRule.getTarget(round);
+        bool isWin = blindRule.checkBlind(score.total, blindTarget);
         int reward = rewardRule.earnMoney(isWin, score.total);
         money += reward;
 
         std::cout << "[SCORE] Chips: " << score.chips
                   << " | Mult: " << score.mult
                   << " (Joker +1)"
-                  << " | Total: " << score.total
+                  << " | Total: " << score.total << "/" << blindTarget
                   << " | Lolos Blind? " << (isWin ? "Ya" : "Tidak")
                   << "\n";
         std::cout << "[REWARD] Gain: " << reward

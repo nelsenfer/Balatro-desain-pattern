@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build Balatro",
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c++11",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "-g",
+                "${workspaceFolder}\\main.cpp",
+                "${workspaceFolder}\\GameManager.cpp",
+                "${workspaceFolder}\\GameRules.cpp",
+                "${workspaceFolder}\\HandChecker.cpp",
+                "${workspaceFolder}\\HandGenerator.cpp",
+                "${workspaceFolder}\\HandSelector.cpp",
+                "${workspaceFolder}\\JokerCard.cpp",
+                "-o",
+                "${workspaceFolder}\\main.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build all Balatro source files."
+        }
+    ]
+}

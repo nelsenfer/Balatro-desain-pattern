@@ -20,5 +20,6 @@ public:
 
 class BlindRule {
 public:
-    bool checkBlind(int score);
+    int getTarget(int round) const;
+    bool checkBlind(int score, int target) const;
 };

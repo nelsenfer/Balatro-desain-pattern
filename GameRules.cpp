@@ -36,6 +36,16 @@ int RewardRule::earnMoney(bool win, int score) {
     return 0;
 }
 
-bool BlindRule::checkBlind(int score) {
-    return score >= 30;
+int BlindRule::getTarget(int round) const {
+    switch (round) {
+    case 1: return 30;
+    case 2: return 60;
+    case 3: return 100;
+    case 4: return 160;
+    default: return 240;
+    }
+}
+
+bool BlindRule::checkBlind(int score, int target) const {
+    return score >= target;
 }

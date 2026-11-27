@@ -32,6 +32,23 @@ class Hand {
 public:
     std::vector<Card> availableCards;
     std::vector<Card> playedCards;
+
+    std::vector<Card> getHeldCards() const {
+        std::vector<Card> held;
+        for (const Card& card : availableCards) {
+            bool played = false;
+            for (const Card& p : playedCards) {
+                if (card == p) {
+                    played = true;
+                    break;
+                }
+            }
+            if (!played) {
+                held.push_back(card);
+            }
+        }
+        return held;
+    }
 };
 
 struct EvaluationResult {

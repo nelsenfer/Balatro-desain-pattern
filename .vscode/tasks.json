@@ -19,6 +19,13 @@
                 "${workspaceFolder}\\HandGenerator.cpp",
                 "${workspaceFolder}\\HandSelector.cpp",
                 "${workspaceFolder}\\JokerCard.cpp",
+                "${workspaceFolder}\\JokerManager.cpp",
+                "${workspaceFolder}\\DefaultJoker.cpp",
+                "${workspaceFolder}\\MadJoker.cpp",
+                "${workspaceFolder}\\MisprintJoker.cpp",
+                "${workspaceFolder}\\RaisedFistJoker.cpp",
+                "${workspaceFolder}\\FlatChipJoker.cpp",
+                "${workspaceFolder}\\PairJoker.cpp",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],

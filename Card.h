@@ -12,6 +12,18 @@ enum class Rank {
 struct Card {
     Suit suit;
     Rank rank;
+
+    bool operator==(const Card& other) const {
+        return suit == other.suit && rank == other.rank;
+    }
+
+    bool operator!=(const Card& other) const {
+        return !(*this == other);
+    }
+
+    int getRankValue() const {
+        return static_cast<int>(rank);
+    }
 };
 
 inline std::string suitName(Suit suit) {

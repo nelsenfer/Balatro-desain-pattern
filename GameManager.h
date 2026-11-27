@@ -3,14 +3,15 @@
 #include "GameRules.h"
 #include "HandGenerator.h"
 #include "HandSelector.h"
-#include "JokerCard.h"
+#include "JokerManager.h"
+#include <memory>
 
 class GameManager {
 private:
     HandGenerator handGenerator;
     HandSelector selector;
     ScoringRule scoringRule;
-    JokerCard jokerCard;
+    JokerManager jokerManager;
     RewardRule rewardRule;
     BlindRule blindRule;
     PokerHandChecker* rootChecker;
@@ -18,5 +19,7 @@ private:
 
 public:
     explicit GameManager(PokerHandChecker* checker);
+    void addJoker(std::unique_ptr<Joker> joker);
+    void setupDefaultJokers();
     void runSession();
 };
